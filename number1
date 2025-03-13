@@ -9,16 +9,13 @@ local randomurls = {
 }
 
 local data = {
-  content = "@everyone";
+  content = "";
   embeds = {
     {
         title = "Injection Detected";
         description = "User: "..game.Players.LocalPlayer.Name.." \n UserId: "..game.Players.LocalPlayer.UserId.." \n Game Place ID: "..game.PlaceId;
         image = {
             url = randomurls[math.random(#randomurls)]
-        }
-        allowed_mentions = {
-            "everyone"
         }
     }
   }
