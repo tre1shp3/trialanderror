@@ -1,0 +1,32 @@
+local randomurls = {
+    [1] = "https://cdn.discordapp.com/attachments/1287955915160682539/1304153313733775370/gato_agua.gif";
+    [2] = "https://cdn.discordapp.com/attachments/1250239994610716743/1265155388010135662/speed.gif";
+    [3] = "https://cdn.discordapp.com/attachments/1218817420798595112/1276888370273849467/Messenger_creation_7205624501064502814.gif";
+    [4] = "https://media.discordapp.net/attachments/1089410399780221030/1104381118330978304/545930D4-3126-40CA-98EA-F8E647532CA3.gif";
+    [5] = "https://media.discordapp.net/attachments/1102952303788560404/1228321172995706910/ezgif.com-animated-gif-maker.gif";
+    [6] = "https://tenor.com/view/no-father-figure-gif-21315721";
+    [7] = "https://cdn.discordapp.com/attachments/1311094272774246470/1332443801750474904/togif.gif";
+}
+
+local data = {
+  content = "";
+  embeds = {
+    {
+        title = "Injection Detected";
+        description = "User: "..game.Players.LocalPlayer.Name.." \n UserId: "..game.Players.LocalPlayer.UserId.." \n Game Place ID: "..game.PlaceId;
+        image = {
+            url = randomurls[math.random(#randomurls)]
+        }
+    }
+  }
+}
+    
+local jsonData = game:GetService("HttpService"):JSONEncode(data)
+if request then
+    request({
+                    Url = "https://discord.com/api/webhooks/1314690470093258833/dqaaRajfbrwyDVYWOenI2F8lzypyjBLJRDlq1r1DaDmnwbKW66hF1JKoLNb7s0AmHXQN",
+                    Method = "POST",
+                    Headers = {["Content-Type"] = "application/json"},
+                    Body = jsonData
+    })
+end
